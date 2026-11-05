@@ -176,8 +176,13 @@
     .track{transition:none;}
   }
   /* photos hidden until project photography is in */
-  .shot{display:none !important;}
-  #projects{display:none !important;}
+  .shot:not(.has){display:none !important;}
+  .shot.has{aspect-ratio:1;} .shot.has img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease;}
+  .slide a.go{display:block; color:inherit; text-decoration:none;} .slide a.go:hover .shot.has img{transform:scale(1.02);}
+  .slide .meta a.more{color:var(--accent); text-transform:none; letter-spacing:0; font-size:14px;}
+  .dots:has(.dot:only-child){display:none;}
+  .allwork{margin-top:22px;} .allwork a{color:var(--accent); font-size:15px;}
+  .hero.sub{min-height:0; padding:clamp(120px,20vw,170px) 26px 56px;} .hero.sub h1{margin-bottom:6px;} .hero.sub .lede{margin-bottom:0;}
 </style>
 </head>
 <body>
@@ -187,7 +192,7 @@
     <div class="left">
       <div class="social">
         <a href="https://www.facebook.com/bagwellconstruction" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="#" aria-label="Instagram" hidden><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.instagram.com/bagwellconstruction/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         <a href="https://www.google.com/maps?cid=5654732800644900235" target="_blank" rel="noopener" aria-label="Google Business Profile"><svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"/><path d="M20.5 12H13"/></svg></a>
         <a href="mailto:david@bagwellbuilds.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
       </div>
@@ -198,22 +203,24 @@
     </div>
   </div>
   <div class="links">
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#about">About</a>
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/#about">About</a>
   </div>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="sheet" id="sheet">
   <button class="x" id="sheetX" aria-label="Close">&times;</button>
-  <a href="#services">Services</a>
-  <a href="#process">Process</a>
-  <a href="#about">About</a>
+  <a href="/">Home</a>
+  <a href="/#services">Services</a>
+  <a href="/gallery/">Gallery</a>
+  <a href="/#about">About</a>
   <div class="meta">
     <div class="row">
       <a href="https://www.facebook.com/bagwellconstruction" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-      <a href="#" aria-label="Instagram" hidden><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.instagram.com/bagwellconstruction/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         <a href="https://www.google.com/maps?cid=5654732800644900235" target="_blank" rel="noopener" aria-label="Google Business Profile"><svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"/><path d="M20.5 12H13"/></svg></a>
     </div>
     <a href="tel:+15856906838">585-690-6838</a>
@@ -236,33 +243,21 @@
         <div class="track" id="track">
 
           <div class="slide">
-            <div class="shot">Photo</div>
-            <h3>The Sleepy Hollow Deck</h3>
-            <div class="spec">16 &times; 18 deck. Stripped to bare wood and refinished, stairs relocated,
-              railings rebuilt, 25 feet of new vertical skirting.</div>
-            <div class="meta">Rochester &middot; September 2026</div>
-          </div>
-
-          <div class="slide">
-            <div class="shot">Photo</div>
-            <h3>The Cascade Road Bath</h3>
-            <div class="spec">5 &times; 8 bathroom. Wallpaper hung above the chair rail, two-coat finish
-              below, trim and fixtures reset.</div>
-            <div class="meta">Henrietta &middot; September 2026</div>
-          </div>
-
-          <div class="slide">
-            <div class="shot">Photo</div>
-            <h3>The Century Closet</h3>
-            <div class="spec">Full gut and rebuild in a turn-of-the-century home. Walls reframed and
-              finished, shelving built to the room.</div>
-            <div class="meta">Rochester &middot; 2026</div>
+            <a class="go" href="/gallery/basement-restoration-pittsford/">
+            <div class="shot has"><img src="https://projects.bagwellbuilds.com/media/nikki-basement/web/french-road-basement.jpg" alt="Basement restoration in Pittsford NY, before and after: the living room with flood-cut drywall and a bare slab, then new walls, baseboard and plank floor" loading="lazy"></div>
+            <h3>Basement Restoration, Pittsford</h3>
+            </a>
+            <div class="spec">Basement restoration after water damage, finished in about two weeks so the house could go
+              on the market. New drywall where the walls were cut, paint floor to ceiling, about 600 sq ft of
+              waterproof plank floor, three new doors, new baseboard throughout, bathroom rebuilt.</div>
+            <div class="meta">Pittsford &middot; October 2026 &nbsp;&middot;&nbsp; <a class="more" href="/gallery/basement-restoration-pittsford/">See all 38 photos &rarr;</a></div>
           </div>
 
         </div>
       </div>
       <div class="dots" id="dots"></div>
     </div>
+    <p class="allwork"><a href="/gallery/">See the gallery &rarr;</a></p>
   </section>
 
   <section class="rv" id="services">
@@ -272,6 +267,7 @@
       <li>Decks and porches<span>New builds, deck replacement, railings, pergolas, porches and fences.</span></li>
       <li>Kitchens<span>Full and partial remodels, cabinets, countertops and tile.</span></li>
       <li>Bathrooms<span>Full remodels, tub and shower, vanities and tile.</span></li>
+      <li>Basements and restoration<span>Basement finishing and remodeling, restoration after water damage, and getting a house ready to sell.</span></li>
       <li>Finish carpentry<span>Trim, doors and windows, staircases, closets, shelving and built-ins.</span></li>
       <li>Flooring<span>Hardwood, laminate, vinyl plank, tile, subfloor repair and trim.</span></li>
     </ul>
@@ -490,12 +486,16 @@
     "Bathroom remodeling",
     "Finish carpentry",
     "Flooring installation",
-    "Structural repairs"
+    "Structural repairs",
+    "Basement remodeling",
+    "Basement restoration",
+    "Water damage restoration"
   ],
   "sameAs": [
     "https://www.google.com/maps?cid=5654732800644900235",
     "https://www.thumbtack.com/ny/rochester/handyman/bagwell-construction/service/588263006947975176",
-    "https://www.facebook.com/bagwellconstruction"
+    "https://www.facebook.com/bagwellconstruction",
+    "https://www.instagram.com/bagwellconstruction/"
   ],
   "openingHoursSpecification": [
     {
