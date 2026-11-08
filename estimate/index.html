@@ -182,7 +182,7 @@
   .slide .meta a.more{color:var(--accent); text-transform:none; letter-spacing:0; font-size:14px;}
   .dots:has(.dot:only-child){display:none;}
   .allwork{margin-top:22px;} .allwork a{color:var(--accent); font-size:15px;}
-  .hero.sub{min-height:0; padding:clamp(150px,27vw,260px) 26px 56px;} .hero.sub h1{margin-bottom:6px;} .hero.sub .lede{margin-bottom:0;}
+  .hero.sub{min-height:0; padding:clamp(170px,30vw,280px) 26px 56px;} .hero.sub h1{margin-bottom:6px;} .hero.sub .lede{margin-bottom:0;}
   .doc{max-width:680px;} .doc h2{margin-top:36px;} .doc p,.doc li{margin-bottom:12px;} .doc ul{padding-left:22px;} .doc .upd{color:var(--soft); font-size:14px;}
   .form{max-width:620px;} .form label{display:block; font-size:14px; letter-spacing:.04em; margin:18px 0 6px; color:var(--ink);}
   .form input,.form select,.form textarea{width:100%; padding:12px 14px; font:inherit; font-size:16px; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:0;}
@@ -265,6 +265,9 @@
   var root=document.documentElement; root.classList.add('anim');
   var nav=document.getElementById('nav'), hero=document.getElementById('top');
   function onScroll(){ var past=window.scrollY>(hero?hero.offsetHeight-90:300); nav.classList.toggle('solid',past); }
+  function fitHero(){ if(hero && hero.classList.contains('sub') && !nav.classList.contains('solid')){ hero.style.paddingTop=(nav.offsetHeight+56)+'px'; } }
+  fitHero(); window.addEventListener('load',fitHero); window.addEventListener('resize',fitHero);
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(fitHero); }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   var burger=document.getElementById('burger'), sheet=document.getElementById('sheet'), sheetX=document.getElementById('sheetX');
   if(burger&&sheet&&sheetX){ function close(){ sheet.classList.remove('open'); document.body.style.overflow=''; }
