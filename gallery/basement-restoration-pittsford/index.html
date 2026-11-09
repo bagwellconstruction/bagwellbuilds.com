@@ -43,7 +43,9 @@ p{margin:0}
 .btn.ink:hover{background:var(--ink);border-color:var(--ink);color:#fff}
 .btn.light{border-color:rgba(200,160,98,.85);color:var(--gold3)}
 .btn.light:hover{background:var(--gold2);border-color:var(--gold2);color:var(--black)}
+.btn.big{min-height:58px;padding:0 44px;border-width:1.5px;font-size:17px;letter-spacing:.16em}
 /* nav */
+.page{position:relative}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s ease,box-shadow .35s ease}
 .nav.solid{background:rgba(10,10,11,.96);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav .in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;transition:padding .35s}
@@ -200,13 +202,15 @@ html.anim .rv.in{opacity:1;transform:none}
 </head>
 <body>
 
+<div class="page">
+
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap in">
     <a class="brand" href="/" aria-label="Bagwell Construction home"><img src="/img/logo-gold.png" alt="Bagwell Construction" width="640" height="267"></a>
     <div class="links"><a href="/gallery/" class="on">Work</a><a href="/services/">Services</a><a href="/process/">Process</a><a href="/about/">About</a></div>
     <div class="right">
       <a class="tel" href="tel:+15858885530">585-888-5530</a>
-      <a class="btn light cta" href="/start/" data-start>Start a project</a>
+      <a class="btn light cta" href="/start/" data-start>Start your project</a>
       <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -214,7 +218,7 @@ html.anim .rv.in{opacity:1;transform:none}
 <div class="sheet" id="sheet" role="dialog" aria-label="Menu">
   <button class="x" id="sheetX" aria-label="Close menu">&times;</button>
   <a href="/gallery/">Work</a><a href="/services/">Services</a><a href="/process/">Process</a><a href="/about/">About</a>
-  <a href="/start/" data-start>Start a project</a>
+  <a href="/start/" data-start>Start your project</a>
   <a class="sub" href="tel:+15858885530">585-888-5530</a>
 </div>
 
@@ -242,7 +246,7 @@ html.anim .rv.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="rv" style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px">
       <h2 class="display" style="font-size:clamp(30px,3.4vw,46px)">The finished space</h2>
-      <p class="body">20 photos. Tap any photo to open it.</p>
+      <p class="body">20 photos.</p>
     </div>
     <div class="gal rv"><a class="ph" href="https://projects.bagwellbuilds.com/media/nikki-basement/gal/after_2858.jpg"><img src="https://projects.bagwellbuilds.com/media/nikki-basement/gal/t_after_2858.jpg" alt="Finished basement remodel in Pittsford, NY, photo 1" loading="lazy"></a>
 <a class="ph" href="https://projects.bagwellbuilds.com/media/nikki-basement/gal/after_2859.jpg"><img src="https://projects.bagwellbuilds.com/media/nikki-basement/gal/t_after_2859.jpg" alt="Finished basement remodel in Pittsford, NY, photo 2" loading="lazy"></a>
@@ -267,26 +271,15 @@ html.anim .rv.in{opacity:1;transform:none}
   </div>
 </section>
 
-<section class="sec cream">
-  <div class="wrap">
-    <h2 class="display rv" style="font-size:clamp(30px,3.4vw,46px);margin-bottom:36px">The work</h2>
-    <ul class="scope rv">
-      <li><b>Walls</b><span>New board along every wall, corners beaded, seams taped and finished in three coats, then two coats of paint floor to ceiling.</span></li>
-      <li><b>Floors</b><span>About six hundred square feet of waterproof plank through the bedroom, living room and hall, with a vapor barrier beneath, the slab leveled where it needed it and transitions at every doorway.</span></li>
-      <li><b>Trim and doors</b><span>New baseboard on every wall, cut and coped at the corners, filled, caulked and finished in semi-gloss. Three new six-panel doors with new hardware, painted both sides.</span></li>
-      <li><b>Bathroom</b><span>Shower walls rebuilt in cement board with new wall panels, a new vanity set and plumbed, and the surrounding walls repaired and painted.</span></li>
-    </ul>
-  </div>
-</section>
 
-<section class="sec stone" id="contact">
+<section class="sec cream" id="contact">
   <div class="wrap rv" style="display:flex;flex-direction:column;align-items:center;text-align:center">
     <p class="eyebrow">Ready to start a project?</p>
     <h2 class="display" style="font-size:clamp(40px,5.2vw,72px);line-height:1;max-width:820px">Have a space in mind?</h2>
-    <p class="body lg" style="margin:26px 0 0;max-width:520px">Every project begins with a conversation and a walkthrough. Tell us what you are picturing and we will be in touch to set a time.</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px">
-      <a class="btn" href="/start/" data-start>Start a project</a>
-      <a class="btn ink" href="tel:+15858885530">Text or call 585-888-5530</a>
+    <p class="body lg" style="margin:26px 0 0;max-width:520px">Every project begins with a conversation and a walkthrough. Choose a time that works and we&rsquo;ll come see the space.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px">
+      <a class="btn big" href="/start/" data-start>Start your project</a>
+      <p style="margin:0;font:400 15px/1.6 Inter,system-ui,sans-serif;color:var(--body)">Prefer to text first? <a href="sms:+15858885530" style="color:var(--ink);border-bottom:1px solid rgba(20,37,61,.35);padding-bottom:1px">585-888-5530</a></p>
     </div>
   </div>
 </section>
@@ -308,11 +301,11 @@ html.anim .rv.in{opacity:1;transform:none}
   </div>
 </footer>
 
-
+</div>
 <div class="modal" id="startModal" role="dialog" aria-modal="true" aria-label="Start a project">
   <div class="panel">
     <button class="x" id="startX" aria-label="Close">&times;</button>
-    <div class="head"><div><h2 class="display">Start a project</h2><p>Pick a time for a conversation and a walkthrough.</p></div></div>
+    <div class="head"><div><h2 class="display">Start your project</h2><p>Pick a time for a conversation and a walkthrough.</p></div></div>
     <iframe class="frame" id="startFrame" data-src="https://app.bagwellbuilds.com/widget/booking/3mOW3rAhQLfW4o4YBD1t" title="Schedule a walkthrough" loading="lazy"></iframe>
     <div class="alt">Prefer to talk first? Text or call <a href="tel:+15858885530">585-888-5530</a> or email <a href="mailto:david@bagwellbuilds.com">david@bagwellbuilds.com</a>.</div>
   </div>
