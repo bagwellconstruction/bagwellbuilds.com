@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Start a Project | Bagwell Construction | Rochester, NY</title>
+<title>Start Your Project | Bagwell Construction | Rochester, NY</title>
 <meta name="description" content="Start a remodeling project with Bagwell Construction in Rochester, New York. Pick a time for a conversation and a walkthrough.">
 <link rel="canonical" href="https://bagwellbuilds.com/start/">
 
@@ -43,7 +43,9 @@ p{margin:0}
 .btn.ink:hover{background:var(--ink);border-color:var(--ink);color:#fff}
 .btn.light{border-color:rgba(200,160,98,.85);color:var(--gold3)}
 .btn.light:hover{background:var(--gold2);border-color:var(--gold2);color:var(--black)}
+.btn.big{min-height:58px;padding:0 44px;border-width:1.5px;font-size:17px;letter-spacing:.16em}
 /* nav */
+.page{position:relative}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s ease,box-shadow .35s ease}
 .nav.solid{background:rgba(10,10,11,.96);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav .in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;transition:padding .35s}
@@ -163,13 +165,15 @@ html.anim .rv.in{opacity:1;transform:none}
 </head>
 <body>
 
+<div class="page">
+
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap in">
     <a class="brand" href="/" aria-label="Bagwell Construction home"><img src="/img/logo-gold.png" alt="Bagwell Construction" width="640" height="267"></a>
     <div class="links"><a href="/gallery/">Work</a><a href="/services/">Services</a><a href="/process/">Process</a><a href="/about/">About</a></div>
     <div class="right">
       <a class="tel" href="tel:+15858885530">585-888-5530</a>
-      <a class="btn light cta" href="/start/" data-start>Start a project</a>
+      <a class="btn light cta" href="/start/" data-start>Start your project</a>
       <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -177,7 +181,7 @@ html.anim .rv.in{opacity:1;transform:none}
 <div class="sheet" id="sheet" role="dialog" aria-label="Menu">
   <button class="x" id="sheetX" aria-label="Close menu">&times;</button>
   <a href="/gallery/">Work</a><a href="/services/">Services</a><a href="/process/">Process</a><a href="/about/">About</a>
-  <a href="/start/" data-start>Start a project</a>
+  <a href="/start/" data-start>Start your project</a>
   <a class="sub" href="tel:+15858885530">585-888-5530</a>
 </div>
 
@@ -185,13 +189,13 @@ html.anim .rv.in{opacity:1;transform:none}
 
 <section class="hero sub">
   <div class="shade" aria-hidden="true"></div>
-  <div class="wrap in"><h1>Start a project.</h1><p class="lede">Every project begins with a conversation and a walkthrough. Pick a time below, and we will come see the space.</p></div>
+  <div class="wrap in"><h1>Start your project.</h1><p class="lede">Every project begins with a conversation and a walkthrough. Pick a time below, and we&rsquo;ll come see the space.</p></div>
 </section>
 
 <section class="sec cream" style="padding-top:64px">
   <div class="wrap">
     <div class="rv" style="background:#fff;border:1px solid var(--line);border-radius:2px;overflow:hidden">
-      <iframe src="https://app.bagwellbuilds.com/widget/booking/3mOW3rAhQLfW4o4YBD1t" title="Schedule a walkthrough" style="width:100%;min-height:760px;border:0;display:block" loading="lazy"></iframe>
+      <div data-embed="booking"><iframe src="https://app.bagwellbuilds.com/widget/booking/3mOW3rAhQLfW4o4YBD1t" title="Schedule a walkthrough" style="width:100%;min-height:760px;border:0;display:block" loading="lazy"></iframe></div>
     </div>
     <p class="body rv" style="margin-top:28px;text-align:center">Prefer to talk first? Text or call <a href="tel:+15858885530" style="color:var(--ink);border-bottom:1px solid var(--ink)">585-888-5530</a> or email <a href="mailto:david@bagwellbuilds.com" style="color:var(--ink);border-bottom:1px solid var(--ink)">david@bagwellbuilds.com</a>.</p>
   </div>
@@ -215,11 +219,11 @@ html.anim .rv.in{opacity:1;transform:none}
   </div>
 </footer>
 
-
+</div>
 <div class="modal" id="startModal" role="dialog" aria-modal="true" aria-label="Start a project">
   <div class="panel">
     <button class="x" id="startX" aria-label="Close">&times;</button>
-    <div class="head"><div><h2 class="display">Start a project</h2><p>Pick a time for a conversation and a walkthrough.</p></div></div>
+    <div class="head"><div><h2 class="display">Start your project</h2><p>Pick a time for a conversation and a walkthrough.</p></div></div>
     <iframe class="frame" id="startFrame" data-src="https://app.bagwellbuilds.com/widget/booking/3mOW3rAhQLfW4o4YBD1t" title="Schedule a walkthrough" loading="lazy"></iframe>
     <div class="alt">Prefer to talk first? Text or call <a href="tel:+15858885530">585-888-5530</a> or email <a href="mailto:david@bagwellbuilds.com">david@bagwellbuilds.com</a>.</div>
   </div>
