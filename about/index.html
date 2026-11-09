@@ -43,7 +43,9 @@ p{margin:0}
 .btn.ink:hover{background:var(--ink);border-color:var(--ink);color:#fff}
 .btn.light{border-color:rgba(200,160,98,.85);color:var(--gold3)}
 .btn.light:hover{background:var(--gold2);border-color:var(--gold2);color:var(--black)}
+.btn.big{min-height:58px;padding:0 44px;border-width:1.5px;font-size:17px;letter-spacing:.16em}
 /* nav */
+.page{position:relative}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s ease,box-shadow .35s ease}
 .nav.solid{background:rgba(10,10,11,.96);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav .in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;transition:padding .35s}
@@ -163,13 +165,15 @@ html.anim .rv.in{opacity:1;transform:none}
 </head>
 <body>
 
+<div class="page">
+
 <nav class="nav" id="nav" aria-label="Main">
   <div class="wrap in">
     <a class="brand" href="/" aria-label="Bagwell Construction home"><img src="/img/logo-gold.png" alt="Bagwell Construction" width="640" height="267"></a>
     <div class="links"><a href="/gallery/">Work</a><a href="/services/">Services</a><a href="/process/">Process</a><a href="/about/" class="on">About</a></div>
     <div class="right">
       <a class="tel" href="tel:+15858885530">585-888-5530</a>
-      <a class="btn light cta" href="/start/" data-start>Start a project</a>
+      <a class="btn light cta" href="/start/" data-start>Start your project</a>
       <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -177,7 +181,7 @@ html.anim .rv.in{opacity:1;transform:none}
 <div class="sheet" id="sheet" role="dialog" aria-label="Menu">
   <button class="x" id="sheetX" aria-label="Close menu">&times;</button>
   <a href="/gallery/">Work</a><a href="/services/">Services</a><a href="/process/">Process</a><a href="/about/">About</a>
-  <a href="/start/" data-start>Start a project</a>
+  <a href="/start/" data-start>Start your project</a>
   <a class="sub" href="tel:+15858885530">585-888-5530</a>
 </div>
 
@@ -199,7 +203,7 @@ html.anim .rv.in{opacity:1;transform:none}
     <div class="cols rv" style="margin-top:0">
       <div><h3 class="display">Design</h3><p class="body">Every project starts with how a space should feel. The design follows from that, not the other way around.</p></div>
       <div><h3 class="display">Craft</h3><p class="body">Materials chosen for how they age, and work finished to a standard that does not depend on who is looking.</p></div>
-      <div><h3 class="display">Care</h3><p class="body">A project is a home someone lives in. It is treated that way from the first day to the last.</p></div>
+      <div><h3 class="display">Care</h3><p class="body">This is your home. It&rsquo;s treated that way from the first day to the last.</p></div>
     </div>
   </div>
 </section>
@@ -207,7 +211,7 @@ html.anim .rv.in{opacity:1;transform:none}
   <div class="wrap rv" style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px" id="g2">
     <h2 class="display" style="font-size:clamp(30px,3.4vw,46px)">The company</h2>
     <div class="body lg" style="display:flex;flex-direction:column;gap:20px">
-      <p>Bagwell Construction is a remodeling company in Rochester, New York, led by owner David Bagwell. It grew out of a family building business that framed homes across the Rochester area for decades, and it carries that structural grounding into every remodel and addition today.</p>
+      <p>Bagwell Construction is a remodeling company in Rochester, New York, led by owner David Bagwell. It grew out of a family building business that built homes across the Rochester area for decades, and that grounding is in every remodel and addition today.</p>
       <p>The work is focused on additions, kitchens, bathrooms, basements, outdoor living and whole-home renovations, for homeowners who want a space done properly and want it to last.</p>
     </div>
   </div>
@@ -217,11 +221,11 @@ html.anim .rv.in{opacity:1;transform:none}
 <section class="sec cream" id="contact">
   <div class="wrap rv" style="display:flex;flex-direction:column;align-items:center;text-align:center">
     <p class="eyebrow">Ready to start a project?</p>
-    <h2 class="display" style="font-size:clamp(40px,5.2vw,72px);line-height:1;max-width:820px">Tell us about the space you have in mind.</h2>
-    <p class="body lg" style="margin:26px 0 0;max-width:520px">Every project begins with a conversation and a walkthrough. Tell us what you are picturing and we will be in touch to set a time.</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:40px">
-      <a class="btn" href="/start/" data-start>Start a project</a>
-      <a class="btn ink" href="tel:+15858885530">Text or call 585-888-5530</a>
+    <h2 class="display" style="font-size:clamp(40px,5.2vw,72px);line-height:1;max-width:820px">Have a space in mind?</h2>
+    <p class="body lg" style="margin:26px 0 0;max-width:520px">Every project begins with a conversation and a walkthrough. Choose a time that works and we&rsquo;ll come see the space.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:40px">
+      <a class="btn big" href="/start/" data-start>Start your project</a>
+      <p style="margin:0;font:400 15px/1.6 Inter,system-ui,sans-serif;color:var(--body)">Prefer to text first? <a href="sms:+15858885530" style="color:var(--ink);border-bottom:1px solid rgba(20,37,61,.35);padding-bottom:1px">585-888-5530</a></p>
     </div>
   </div>
 </section>
@@ -243,11 +247,11 @@ html.anim .rv.in{opacity:1;transform:none}
   </div>
 </footer>
 
-
+</div>
 <div class="modal" id="startModal" role="dialog" aria-modal="true" aria-label="Start a project">
   <div class="panel">
     <button class="x" id="startX" aria-label="Close">&times;</button>
-    <div class="head"><div><h2 class="display">Start a project</h2><p>Pick a time for a conversation and a walkthrough.</p></div></div>
+    <div class="head"><div><h2 class="display">Start your project</h2><p>Pick a time for a conversation and a walkthrough.</p></div></div>
     <iframe class="frame" id="startFrame" data-src="https://app.bagwellbuilds.com/widget/booking/3mOW3rAhQLfW4o4YBD1t" title="Schedule a walkthrough" loading="lazy"></iframe>
     <div class="alt">Prefer to talk first? Text or call <a href="tel:+15858885530">585-888-5530</a> or email <a href="mailto:david@bagwellbuilds.com">david@bagwellbuilds.com</a>.</div>
   </div>
